@@ -23,7 +23,7 @@ tf serving:
 ## 方案1： yarn 3.1+ ： 
 可以支持docker_image, [还不能提供稳定性保障](https://hadoop.apache.org/docs/r3.1.1/hadoop-yarn/hadoop-yarn-site/DockerContainers.html)
 
-![image](https://github.com/wangruichens/tfserving/serving.png)
+![image](https://github.com/wangruichens/tfserving/blob/master/serving.png)
 
 [Docker+GPU support + tf serving + hadoop 3.1](https://community.hortonworks.com/articles/231660/tensorflow-serving-function-as-a-service-faas-with.html)
 
@@ -81,7 +81,7 @@ sudo service docker stop
 
 模型很简单，参数量大概138w. 通过hdfs上的tfrecord来训练，模型文件保存在hdfs上
 
-![image](https://github.com/wangruichens/tfserving/model_des.png)
+![image](https://github.com/wangruichens/tfserving/blob/master/model_des.png)
 
 #### 3、docker启动tf serving, 拉取hdfs model 到本地并加载模型
 
@@ -135,7 +135,7 @@ tensorflow_model_server --port=8500 --rest_api_port=8501 \
 
 服务启动，模型成功加载：
 
-![image](https://github.com/wangruichens/tfserving/serving2.png)
+![image](https://github.com/wangruichens/tfserving/blob/master/serving2.png)
 
 查看端口占用和服务状态：
 ```
@@ -147,7 +147,9 @@ curl http://localhost:8501/v1/models/mnist
 ```
 python ./demo2/make_request.py
 ```
-![image](https://github.com/wangruichens/tfserving/res.png)
+
+
+![image](https://github.com/wangruichens/tfserving/blob/master/res.png)
 
 
 ## 方案4： Centos 7 + tf serving + GPU without Docker
@@ -155,7 +157,7 @@ python ./demo2/make_request.py
 愿意踩坑的可以自己使用bazel编译：[参考链接](https://www.dearcodes.com/index.php/archives/25/)
 
 # tf serving 使用nginx部署负载均衡 
-[这里](https://github.com/wangruichens/tfserving/serving_nginx)
+[这里](https://github.com/wangruichens/tfserving/blob/master/serving_nginx)
 
 # 主要问题：
 
