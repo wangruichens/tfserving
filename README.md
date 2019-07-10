@@ -23,7 +23,7 @@ tf serving:
 ## 方案1： yarn 3.1+ ： 
 可以支持docker_image, [还不能提供稳定性保障](https://hadoop.apache.org/docs/r3.1.1/hadoop-yarn/hadoop-yarn-site/DockerContainers.html)
 
-![image](https://github.com/wangruichens/tfserving/blob/master/serving.png)
+![image](serving.png)
 
 [Docker+GPU support + tf serving + hadoop 3.1](https://community.hortonworks.com/articles/231660/tensorflow-serving-function-as-a-service-faas-with.html)
 
@@ -81,7 +81,7 @@ sudo service docker stop
 
 模型很简单，参数量大概138w. 通过hdfs上的tfrecord来训练，模型文件保存在hdfs上
 
-![image](https://github.com/wangruichens/tfserving/blob/master/model_des.png)
+![image](model_des.png)
 
 #### 3、docker启动tf serving, 拉取hdfs model 到本地并加载模型
 
@@ -135,7 +135,7 @@ tensorflow_model_server --port=8500 --rest_api_port=8501 \
 
 服务启动，模型成功加载：
 
-![image](https://github.com/wangruichens/tfserving/blob/master/serving2.png)
+![image](serving2.png)
 
 查看端口占用和服务状态：
 ```
@@ -149,7 +149,7 @@ python ./demo2/make_request.py
 ```
 
 
-![image](https://github.com/wangruichens/tfserving/blob/master/res.png)
+![image](res.png)
 
 
 ## 方案4： Centos 7 + tf serving + GPU without Docker
